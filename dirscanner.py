@@ -1,7 +1,24 @@
 import header
 import os
 from . import header
+
+
 header.banner()
+
+obj_list=[]
+
+class obj:
+    def __init__(self,name):
+        obj_list.append(name)
+
+def scan(name):
+    try: 
+        obj_list.clear()
+        with open(os.path.join('BSDT_control',name,'target.bsdt'), 'r') as f:
+            lines = f.readlines()
+            for line in lines:obj(line)
+
+    except FileNotFoundError: print(f"[FileNotFoundError] It seems that {os.path.join('BSDT_control',name,'target.bsdt')} doesn't exist.")
 
 def write_targetlist(name,targetlist):
     if os.path.exists(os.path.join('BSDT_control',name)): pass
