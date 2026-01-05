@@ -1,6 +1,8 @@
 import subprocess
 import sys
-from BSDT install header
+import os
+from . import header
 
-
-subprocess.run([sys.executable, '-m','pip','install','-r','requirements.txt'])
+def boot():
+    header.banner()
+    subprocess.run([sys.executable, '-m','pip','install','-r','requirements.txt'])

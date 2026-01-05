@@ -1,7 +1,7 @@
 import header
 import os
-
-header.header(True)
+from . import header
+header.banner()
 
 def write_targetlist(name,targetlist):
     if os.path.exists(os.path.join('BSDT_control',name)): pass
