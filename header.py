@@ -23,6 +23,6 @@ Bootleg Execution Starting...
     ''')
 
 def banner(short_bull=True):
-    if short_bull: logo()
+    if not short_bull: logo()
     else: pass
     log()
